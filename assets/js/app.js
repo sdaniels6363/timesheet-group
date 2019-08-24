@@ -61,14 +61,18 @@ $(document).ready(function () {
     console.log(sv.empStartDate);
     console.log(sv.monthlyRate);
 
+    var currDate = new Date(); // grabs current date
+    var monthsWorked = moment(currDate).diff(sv.empStartDate, 'months');
+    var total = monthsWorked*sv.monthlyRate;
+
     var tableEntry = `
     <tr>
     <td id="empName-display">${sv.empName}</td>
     <td id="empRole-display">${sv.empRole}</td>
     <td id="empStartDate-display">${sv.empStartDate}</td>
-    <td id="empMonthWorked-display"></td>
-    <td id="monthlyRate-display">${sv.monthlyRate}</td>
-    <td id="total-display"></td>
+    <td id="empMonthWorked-display">${monthsWorked}</td>
+    <td id="monthlyRate-display">$ ${sv.monthlyRate}</td>
+    <td id="total-display">$ ${total}</td>
   </tr>
     `
     $(tableEntry).appendTo("tbody");
