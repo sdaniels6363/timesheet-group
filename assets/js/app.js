@@ -34,6 +34,19 @@ $(document).ready(function () {
       empMonthWorked: monthWrk
     });
 
+    var emptyRow = `
+    <tr>
+      <td id="empName"></td>
+      <td id="empRole"></td>
+      <td id="empStartDate"></td>
+      <td id="empMonthWorked"></td>
+      <td id="monthlyRate"></td>
+      <td id="total"></td>
+    </tr>
+    `;
+
+    $(emptyRow).appendTo("tbody");
+
   });
 })
 
